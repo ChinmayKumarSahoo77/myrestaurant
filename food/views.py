@@ -4,6 +4,6 @@ from django.http import HttpResponse
 
 # function based view
 def first_view(request):
-    return HttpResponse("Hii all, successfully I created my first djnago function based view\
+    return HttpResponse("<h1>Hii all, successfully I created my first djnago function based view\
                         without taking the help of any tutorial.\
-                        A big Thanks to google teacher and the official docs of django")
+                        A big Thanks to google teacher and the official docs of django</h1>")
