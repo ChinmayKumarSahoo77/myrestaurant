@@ -14,7 +14,7 @@
     <div class="row p-3 mt-2">
 
         <div class="col-md-4 offset-md-1"> 
-            <img class="card"  style="height: 200px;" src=" {{ item.image }} " alt="">
+            <img class="card"  style="height: 230px;" src=" {{ item.image }} " alt="">
         </div>
         
         <div class="col-md-4">
@@ -24,10 +24,12 @@
         </div>
 
         <div class="col-md-3">
-            <a href="{% url 'food:details' item.id %}" class="btn btn-success">Details</a>
-        </div>
-            
+            <a href="{% url 'food:details' item.id %}" class="btn btn-success mt-3">Details</a>
+            <br>
+            <a href="{% url 'food:delete' item.id %}" class="btn btn-danger mt-3">Delete</a>
+        </div>   
     </div>
+    <hr>
     {% endfor %}
     {% endblock %}
 </body>

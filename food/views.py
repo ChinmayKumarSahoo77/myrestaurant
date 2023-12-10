@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from food.models import Food
 from .forms import CreateForm 
@@ -42,8 +42,8 @@ def create(request):
     """
     form_data = CreateForm(request.POST or None)
     if request.method == 'POST' and form_data.is_valid():
-            form_data.save()
-            return redirect('food:show')
+        form_data.save()
+        return redirect('food:show')
 
     return render(request, 'food/add_food.html', {'food': form_data})
 
@@ -74,3 +74,14 @@ def show(request):
 def details(request, id):
     if item_details := Food.objects.get(id=id):
         return render(request, 'food/details.html', {'details': item_details})
+    
+
+def delete_item(request, id):
+
+    obj = get_object_or_404(Food, id = id)
+    if request.method == "POST":
+        query = Food.objects.get(id = id)
+        query.delete()
+        return redirect('food:show')
+
+    return render(request, 'food/delete.html', {'item': obj})

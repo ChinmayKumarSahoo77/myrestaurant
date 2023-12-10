@@ -2,37 +2,70 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Item</title>
 </head>
+
 <body>
     {% block body %}
     <h1>Add Dish</h1>
     <form method="POST">
         {% csrf_token %}
 
-        <label>Dish name:</label><br>
-        <input type="text" name="name">
-        <br>
+        <div class="card">
+            <div class="mb-3">
+                <label class="form-label">name:</label><br>
+                <input type="text" name="name">
+            </div>
 
-        <label>Dish description:</label><br>
-        <input type="text" name="description">
-        <br>
+            <div class="mb-3">
+                <label class="form-label">Dish description:</label><br>
+                <input type="text" name="description">
+            </div>
 
-        <label>Dish price:</label><br>
-        <input type="text" name="price">
-        <br>
+            <div class="mb-3">
+                <label class="form-label">Dish price:</label><br>
+                <input type="text" name="price">
+            </div>
 
-        <label>Dish image link:</label><br>
-        <input type="text" name="image">
-        <br>
-        <br>
-        
-        <input type="submit" value="Submit">
-      </form> 
-      {% endblock %}
-    
+            <div class="mb-3">
+                <label class="form-label">Dish image link:</label><br>
+                <input type="text" name="image">
+            </div>
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input">
+                <label class="form-check-label" for="exampleCheck1">Veg</label><br>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+    {% endblock %}
+
 </body>
+
 </html>
+
+<!-- <label>Dish name::</label><br><br>
+<input type="text" name="name">
+<br>
+
+<label>Dish description::</label><br><br>
+<input type="text" name="description">
+<br>
+
+<label>Dish price::</label><br><br>
+<input type="text" name="price">
+<br>
+
+<label>Dish image link::</label><br><br>
+<input type="text" name="image">
+<br>
+<br>
+
+<input type="submit" value="Submit"> -->
