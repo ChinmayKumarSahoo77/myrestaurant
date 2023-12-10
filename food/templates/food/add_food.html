@@ -1,3 +1,5 @@
+{% extends 'food/base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +8,7 @@
     <title>Add Item</title>
 </head>
 <body>
+    {% block body %}
     <h1>Add Dish</h1>
     <form method="POST">
         {% csrf_token %}
@@ -29,6 +32,7 @@
         
         <input type="submit" value="Submit">
       </form> 
+      {% endblock %}
     
 </body>
 </html>

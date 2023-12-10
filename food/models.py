@@ -11,4 +11,4 @@ class Food(models.Model):
     image = models.CharField(max_length=500, default='https://www.fnasafety.com/wp-content/uploads/2016/04/ComingSoon2-fnasafety.png', )
 
     def __str__(self) -> str:
-        return self.name
+        return self.name    

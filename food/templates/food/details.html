@@ -1,0 +1,29 @@
+{% extends 'food/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<body>
+    {% block body %}
+
+        <div class="row">
+
+            <div class="col-md-4 offset-md-1"> 
+                <img class="card"  style="height: 300px;" src=" {{ details.image }} " alt="">
+            </div>
+            
+            <div class="col-md-4 offset-md-1">
+                <h2> {{ details.name }} </h2>
+                <h2> ₹{{ details.price }} </h2>
+                <br>
+                <h4>DETAILS ABOUT THIS MEAL</h4>
+                <p> {{ details.description }} </p> 
+                
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>
