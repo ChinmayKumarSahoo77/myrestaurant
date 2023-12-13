@@ -19,9 +19,10 @@
                 <h2> {{ details.name }} </h2>
                 <h2> ₹{{ details.price }} </h2>
                 <br>
-                <h4>DETAILS ABOUT THIS MEAL</h4>
+                <h4>DETAILS ABOUT THIS MEAL:</h4>
                 <p> {{ details.description }} </p> 
                 
+                <a href="{% url 'food:update_item' details.id %}">Update</a>
             </div>
         </div>
     {% endblock %}

@@ -11,37 +11,39 @@
 
 <body>
     {% block body %}
-    <h1>Add Dish</h1>
     <form method="POST">
         {% csrf_token %}
 
-        <div class="card">
-            <div class="mb-3">
-                <label class="form-label">name:</label><br>
-                <input type="text" name="name">
+        <div class="card mx-auto" style="width: 18rem;">
+            <div class="card-body">
+                <h2 class="card-title">Add Dish</h2>
+                <div class="mb-3">
+                    <label>name:</label><br>
+                    <input type="text" name="name">
+                </div>
+    
+                <div class="mb-3">
+                    <label>Dish description:</label><br>
+                    <input type="text" name="description">
+                </div>
+    
+                <div class="mb-3">
+                    <label>Dish price:</label><br>
+                    <input type="text" name="price">
+                </div>
+    
+                <div class="mb-3">
+                    <label>Dish image link:</label><br>
+                    <input type="text" name="image">
+                </div>
+    
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input">
+                    <label>Veg</label><br>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-
-            <div class="mb-3">
-                <label class="form-label">Dish description:</label><br>
-                <input type="text" name="description">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Dish price:</label><br>
-                <input type="text" name="price">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Dish image link:</label><br>
-                <input type="text" name="image">
-            </div>
-
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input">
-                <label class="form-check-label" for="exampleCheck1">Veg</label><br>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
 
     </form>

@@ -1,0 +1,49 @@
+{% extends 'food/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Item</title>
+</head>
+
+<body>
+    {% block body %}
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="card mx-auto" style="width: 18rem;">
+            <div class="card-body">
+                <h2 class="card-title">Update Dish</h2>
+                <div class="mb-3">
+                    <label>name:</label><br>
+                    <input type="text" name="name" value="{{ item.instance.name }}">
+                </div>
+    
+                <div class="mb-3">
+                    <label>Dish description:</label><br>
+                    <input type="text" name="description" value="{{ item.instance.description }}">
+                </div>
+    
+                <div class="mb-3">
+                    <label>Dish price:</label><br>
+                    <input type="text" name="price" value="{{ item.instance.price }}">
+                </div>
+    
+                <div class="mb-3">
+                    <label>Dish image link:</label><br>
+                    <input type="text" name="image" value="{{ item.instance.image }}">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+
+    </form>
+    {% endblock %}
+
+</body>
+
+</html>

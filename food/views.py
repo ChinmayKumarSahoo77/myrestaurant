@@ -85,3 +85,16 @@ def delete_item(request, id):
         return redirect('food:show')
 
     return render(request, 'food/delete.html', {'item': obj})
+
+def update_item(request, id):
+    item_obj = get_object_or_404(Food, id =id)
+
+    form = CreateForm(request.POST or None, instance=item_obj)
+
+    if form.is_valid():
+        form.save()
+        return redirect('food:show')
+    
+    return render(request, 'food/update.html', {"item": form})
+
+    
