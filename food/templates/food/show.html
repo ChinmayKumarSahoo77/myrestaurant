@@ -1,4 +1,5 @@
 {% extends 'food/base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +21,12 @@
         <div class="col-md-4">
             <h2> {{ item.name }} </h2>
             <h2> ₹{{ item.price }} </h2>
+            {% if item.isveg %}
+                <img src="https://i.pinimg.com/736x/e4/1f/f3/e41ff3b10a26b097602560180fb91a62.jpg" style="height: 20px;" alt="">
+            {% else %}
+                <img src="https://t3.ftcdn.net/jpg/06/09/29/66/360_F_609296657_KDmMfhFZ2VNuTkMn2uc1q3nd453UZJXk.jpg" style="height: 40px;" alt="">
+            {% endif %} 
+
         </div>
 
         <div class="col-md-3">
