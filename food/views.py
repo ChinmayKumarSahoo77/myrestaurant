@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
+from django.core.paginator import Paginator
+
 from food.models import Food
 from .forms import CreateForm 
 # Create your views here.
@@ -64,9 +66,13 @@ def show(request):
         200
     """
     items = Food.objects.all()
+    paginator = Paginator(items, 2, 1, False)
 
+    page_num = request.GET.get('page')
+    page_obj = paginator.get_page(page_num)
+    
     context = {
-        "items": items
+        "items": page_obj
     }
 
     return render(request, 'food/show.html', context)
