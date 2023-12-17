@@ -103,4 +103,15 @@ def update_item(request, id):
     
     return render(request, 'food/update.html', {"item": form})
 
+def search_view(request):
+
+    context = {}
+    if request.method == "POST":
+        search_item = request.POST.get('search_query')
+        result_item = Food.objects.filter(name__icontains = search_item)
+        context["items"] = result_item
+        return render(request, 'food/show.html', context=context)
+    
+    return render(request, 'food/base.html', context=context)
+
     

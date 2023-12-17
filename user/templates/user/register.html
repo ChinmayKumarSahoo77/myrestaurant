@@ -7,7 +7,7 @@
             <div class="card mt-4">
                 <div class="card-header bg-primary">
                     <div class="card-title text-center text-white">
-                        Register
+                        Create Account
                     </div>
                 </div>
                 <div class="card-body">
@@ -24,31 +24,35 @@
 
                             <div class="mb-3">
                                 <label class="form-label">first name</label>
-                                <input type="text" name="first_name" class="form-control">
+                                <input type="text" name="first_name" class="form-control" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">last name</label>
+                                <label class="form-label">last name (Optional)</label>
                                 <input type="text" name="last_name" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">username</label>
-                                <input type="text" name="username" class="form-control">
+                                <input type="text" name="username" class="form-control" required>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">email</label>
-                                <input type="email" name="email" class="form-control">
+                                <input type="email" name="email" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">password</label>
-                                <input type="password" name="password" class="form-control">
+                                <input type="password" name="password" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">confirm password</label>
-                                <input type="password" name="c_password" class="form-control">
+                                <input type="password" name="c_password" class="form-control" required>
                             </div>
 
-                        <button type="submit" class="btn btn-success">Register</button>
+                        <button type="submit" class="btn btn-success">Sign up</button>
+                        <div class="card-text mt-3">
+                            Already have an account
+                            <a class="btn btn-success" href="{% url 'login' %}">Sing in</a>
+                        </div>
                     </form>
                 </div>
 

@@ -22,7 +22,7 @@
                 <h4>DETAILS ABOUT THIS MEAL:</h4>
                 <p> {{ details.description }} </p> 
                 
-                <a href="{% url 'food:update_item' details.id %}">Update</a>
+                <a class="btn btn-success" href="{% url 'food:update_item' details.id %}">Update</a>
             </div>
         </div>
     {% endblock %}

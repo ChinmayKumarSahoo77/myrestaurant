@@ -7,7 +7,7 @@
             <div class="card mt-4">
                 <div class="card-header bg-primary">
                     <div class="card-title text-center text-white">
-                        Login
+                        Sign in to Pakashala
                     </div>
                 </div>
                 <div class="card-body">
@@ -23,16 +23,20 @@
                             {% endif %}
 
                             <div class="mb-3">
-                                <label class="form-label">username</label>
-                                <input type="text" name="username" class="form-control">
+                                <label class="form-label">username:</label>
+                                <input type="text" name="username" class="form-control" required>
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label">password</label>
-                                <input type="password" name="password" class="form-control">
+                                <label class="form-label">password:</label>
+                                <input type="password" name="password" class="form-control" required>
                             </div>
 
-                        <button type="submit" class="btn btn-success">Login</button>
+                        <button type="submit" class="btn btn-success">Sign in</button>
+                        <div class="card-text mt-3">
+                            Don't have an account
+                            <a class="btn btn-success" href="{% url 'register' %}">Sign up</a>
+                        </div>
                     </form>
                 </div>
 
