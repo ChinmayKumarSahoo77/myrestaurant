@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
 from food.models import Food
 from .forms import CreateForm 
@@ -26,7 +27,7 @@ def first_view(request):
                         without taking the help of any tutorial.\
                         A big Thanks to google teacher and the official docs of django</h1>")
 
-
+@login_required()
 def create(request):
     """
     A view that handles the creation of a new food item.
@@ -81,7 +82,7 @@ def details(request, id):
     if item_details := Food.objects.get(id=id):
         return render(request, 'food/details.html', {'details': item_details})
     
-
+@login_required()
 def delete_item(request, id):
 
     obj = get_object_or_404(Food, id = id)
@@ -92,6 +93,7 @@ def delete_item(request, id):
 
     return render(request, 'food/delete.html', {'item': obj})
 
+@login_required()
 def update_item(request, id):
     item_obj = get_object_or_404(Food, id =id)
 
